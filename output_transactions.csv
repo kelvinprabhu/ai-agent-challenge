@@ -1,0 +1,88 @@
+Date,Description,Debit Amt,Credit Amt,Balance
+01-08-2024,Salary Credit XYZ Pvt Ltd 1,935.36,,864.58
+02-08-2024,Salary Credit XYZ Pvt Ltd 1,652.61,,517.19
+03-08-2024,IMPS UPI Payment Amazon 3,886.08,,631.11
+03-08-2024,Mobile Recharge Via UPI 1,648.72,,279.83
+17-08-2024,Electricity Bill NEFT Online 1,963.11,,121.51
+18-08-2024,Interest Credit Saving Account,596.72,,524.79
+25-08-2024,Cheque Deposit Local Clearing,617.86,,906.93
+27-08-2024,Fuel Purchase Debit Card 2,650.96,,557.89
+01-09-2024,Dining Out Card Swipe,656.42,,214.31
+08-09-2024,Mobile Recharge Via UPI 4,150.96,,063.35
+12-09-2024,Cheque Deposit Local Clearing,826.71,,890.06
+16-09-2024,Credit Card Payment ICICI 1,629.34,,409.16
+20-09-2024,NEFT Transfer T o ABC Ltd 4,275.77,,684.93
+26-09-2024,IMPS UPI Payment Amazon,740.64,,932.74
+03-10-2024,EMI Auto Debit HDFC Bank 2,516.44,,449.18
+06-10-2024,Utility Bill Payment Electricity 4,208.51,,240.67
+07-10-2024,Service Charge GST Debit 3,593.89,,834.56
+12-10-2024,IMPS UPI Payment Amazon 4,098.72,,148.32
+15-10-2024,UPI QR Payment Groceries 3,713.69,,434.63
+22-10-2024,Salary Credit XYZ Pvt Ltd 4,182.22,,252.43
+23-10-2024,UPI QR Payment Groceries 3,615.84,,636.59
+26-10-2024,EMI Auto Debit HDFC Bank 1,006.21,,630.38
+04-11-2024,Service Charge GST Debit,756.93,,873.45
+04-11-2024,Cash Deposit Branch Counter,622.18,,495.63
+06-11-2024,Cash Deposit Branch Counter 3,777.56,,718.07
+07-11-2024,Fuel Purchase Debit Card 2,986.09,,732.07
+11-11-2024,UPI QR Payment Groceries 3,116.44,,848.51
+14-11-2024,Utility Bill Payment Electricity,320.12,,528.39
+14-11-2024,Electricity Bill NEFT Online 3,079.38,,607.77
+19-11-2024,NEFT Transfer T o ABC Ltd 4,925.74,,682.03
+21-11-2024,Cheque Deposit Local Clearing,515.93,,197.96
+26-11-2024,Fuel Purchase Debit Card 4,319.32,,517.28
+01-12-2024,Fuel Purchase Debit Card,821.75,,339.03
+04-12-2024,Cheque Deposit Local Clearing 2,939.04,,399.99
+07-12-2024,Dining Out Card Swipe 2,177.58,,577.57
+13-12-2024,Cash Deposit Branch Counter 1,210.14,,367.43
+17-12-2024,IMPS UPI Payment Amazon 1,683.84,,051.27
+18-12-2024,Cash Deposit Branch Counter 4,706.81,,344.47
+24-12-2024,Cheque Deposit Local Clearing 1,359.01,,703.47
+27-12-2024,NEFT Transfer From PQR Pvt 4,678.02,,025.45
+01-01-2025,UPI QR Payment Groceries 2,447.81,,473.26
+05-01-2025,UPI QR Payment Groceries,270.87,,202.39
+15-01-2025,NEFT Transfer From PQR Pvt 3,782.46,,419.93
+23-01-2025,Credit Card Payment ICICI,426.36,,846.29
+27-01-2025,Service Charge GST Debit 4,332.26,,514.03
+30-01-2025,UPI QR Payment Groceries 4,960.86,,008.54
+02-02-2025,IMPS UPI Payment Amazon 2,693.97,,702.51
+14-02-2025,Online Card Purchase Flipkart,737.74,,440.25
+24-02-2025,IMPS UPI Payment Amazon 1,998.34,,464.94
+24-02-2025,Salary Credit XYZ Pvt Ltd 1,611.68,,076.62
+01-03-2025,Credit Card Payment ICICI 4,509.03,,567.59
+02-03-2025,Dining Out Card Swipe 2,922.99,,490.58
+10-03-2025,Interest Credit Saving Account,187.17,,677.75
+12-03-2025,IMPS UPI Payment Amazon,741.32,,936.43
+18-03-2025,Interest Credit Saving Account,884.31,,933.99
+21-03-2025,ATM Cash Withdrawal India,189.74,,744.25
+31-03-2025,Insurance Premium Auto Debit 3,183.71,,560.54
+01-04-2025,Dining Out Card Swipe 1,786.81,,773.73
+10-04-2025,Fuel Purchase Debit Card 3,455.33,,229.06
+12-04-2025,Insurance Premium Auto Debit,827.09,,271.01
+16-04-2025,Dining Out Card Swipe 4,890.35,,161.36
+19-04-2025,Online Card Purchase Flipkart 2,634.08,,527.36
+22-04-2025,Credit Card Payment ICICI 4,168.32,,695.68
+25-04-2025,Salary Credit XYZ Pvt Ltd 4,183.97,,879.65
+27-04-2025,IMPS UPI Transfer Paytm 4,087.04,,792.61
+28-04-2025,IMPS UPI Transfer Paytm,363.47,,429.14
+17-05-2025,Salary Credit XYZ Pvt Ltd 1,863.31,,587.99
+21-05-2025,Fuel Purchase Debit Card 4,526.66,,061.39
+31-05-2025,Dining Out Card Swipe 2,583.14,,478.25
+01-06-2025,Salary Credit XYZ Pvt Ltd 4044.7,,,566.45
+01-06-2025,Salary Credit XYZ Pvt Ltd 2617.5 -3,,,183.95
+07-06-2025,Dining Out Card Swipe 3,077.91,,106.04
+08-06-2025,Electricity Bill NEFT Online 3,949.78,,843.74
+10-06-2025,Utility Bill Payment Electricity 4,567.77,,724.03
+18-06-2025,Utility Bill Payment Electricity 1,980.53,,704.56
+18-06-2025,Interest Credit Saving Account 4,805.82,,101.26
+21-06-2025,Electricity Bill NEFT Online,395.05,,496.31
+27-06-2025,ATM Cash Withdrawal India 4,944.55,,185.15
+30-06-2025,Interest Credit Saving Account,150.91,,336.06
+05-07-2025,IMPS UPI Payment Amazon 4,883.29,,547.23
+06-07-2025,Interest Credit Saving Account 1,248.14,,299.09
+08-07-2025,Online Card Purchase Flipkart 4,029.62,,730.53
+14-07-2025,Mobile Recharge Via UPI,380.91,,111.44
+19-07-2025,NEFT Transfer From PQR Pvt 1,581.69,,936.91
+20-07-2025,Utility Bill Payment Electricity 2,989.23,,926.14
+24-07-2025,Electricity Bill NEFT Online 2,917.52,,997.08
+25-07-2025,Salary Credit XYZ Pvt Ltd,566.32,,430.76

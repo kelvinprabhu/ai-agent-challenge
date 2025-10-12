@@ -1,0 +1,224 @@
+2025-10-12 15:28:36,207 | INFO | ======================================================================
+2025-10-12 15:28:36,207 | INFO | Starting Multi-Agent Pipeline
+2025-10-12 15:28:36,208 | INFO | ======================================================================
+2025-10-12 15:28:36,257 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 15:28:36,280 | INFO | Starting PDF structure analysis
+2025-10-12 15:28:36,457 | DEBUG | Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-193a3a11-4c50-4d8b-b0f1-5c4e4d5c9268', 'json_data': {'messages': [{'role': 'user', 'content': 'You are an expert in **PDF document structure analysis**, **financial data extraction**, and **Python-based text parsing**.\n\nYou are provided with raw text snippets extracted from a **bank statement PDF**.\nEach snippet includes portions from the top, middle, and bottom of several pages:\n\nPage 1:\nTOP:\nDate Description Debit Amt Credit Amt Balance\n01-08-2024 Salary Credit XYZ Pvt Ltd 1935.3 6864.58\n02-08-2024 Salary Credit XYZ Pvt Ltd 1652.61 8517.19\n03-08-2024 IMPS UPI Payment Amazon 3886.08 4631.11\n03-08-2024 Mobile Recharge Via UPI 1648.72 6279.83\n14-08-2024 Fuel Purchase Debit Card 3878.57 101\nMIDDLE:\n.59\n26-10-2024 EMI Auto Debit HDFC Bank 1006.21 16630.38\n04-11-2024 Service Charge GST Debit 756.93 \nBOTTOM:\n 3782.46 6419.93\n23-01-2025 Credit Card Payment ICICI 426.36 6846.29\n27-01-2025 Service Charge GST Debit 4332.26 2514.03\n27-01-2025 Fuel Purchase Debit Card 1533.65 4047.68ChatGPT Powered Karbon Bannk\n\n\nPage 2:\nTOP:\nDate Description Debit Amt Credit Amt Balance\n30-01-2025 UPI QR Payment Groceries 4960.86 9008.54\n02-02-2025 IMPS UPI Payment Amazon 2693.97 11702.51\n14-02-2025 Online Card Purchase Flipkart 737.74 12440.25\n21-02-2025 Dining Out Card Swipe 3973.65 8466.6\n24-02-2025 IMPS UPI Payment Amazon 1998.34 10\nMIDDLE:\n25 Salary Credit XYZ Pvt Ltd 1863.31 10587.99\n21-05-2025 Fuel Purchase Debit Card 4526.6 6061.39\n31-\nBOTTOM:\n8.46 6914.6\n24-07-2025 Electricity Bill NEFT Online 2917.52 3997.08\n25-07-2025 Salary Credit XYZ Pvt Ltd 566.32 3430.76\n27-07-2025 ATM Cash Withdrawal India 2156.01 5586.77ChatGPT Powered Karbon Bannk\n\n\nTreat all data as **plain text**, not numeric. Do not calculate or summarize values. Words like \'Cr\', \'Dr\', \'Ltd\', or \'Balance\' are to be treated as part of textual structure.\n\nYour job has **two parts**:\n\n### PART 1 — Structural & Parsing Analysis\nPerform a detailed technical analysis of the PDF layout, covering:\n1. **File-Level Overview** — Identify type of document and logical flow (summary, transactions, footer, etc.).\n2. **Header & Metadata Extraction** — Detect metadata fields like bank name, customer name, account number, statement period, IFSC, etc., and mention examples if found.\n3. **Data Structure / Table Schema** — Identify recurring headers (e.g., Date | Description | Withdrawals | Deposits | Balance), alignment, delimiters, and variations across pages.\n4. **Layout Consistency** — Comment on header/footer repetition, alignment, and text flow issues (multi-line rows, unaligned tables, etc.).\n5. **Metadata & Data Mapping Plan** — Suggest a dictionary-like data model (`{\'Bank Name\': str, \'Account Number\': str, \'Transactions\': List[Dict]}`).\n6. **Expected CSV Output Schema** — Suggest ideal column names and data types for CSV export.\n7. **Edge Cases** — Predict parsing challenges (OCR errors, merged cells, inconsistent spacing) and suggest mitigation approaches.\n\n### PART 2 — Example Python Code Template\nProvide an example **Python function** that demonstrates how to extract text from the PDF, page by page, and return a dictionary mapping page numbers to extracted text.\n\nUse this format exactly:\n```python\nfrom PyPDF2 import PdfReader\n\ndef parse_pdf(file_path):\n    """\n    Parses a PDF and returns a dictionary of page numbers to text.\n    """\n    pdf_text_dict = dict\n    try:\n        pdf_reader = PdfReader(file_path)\n        number_of_pages = len(pdf_reader.pages)\n        for i in range(number_of_pages):\n            page = pdf_reader.pages[i]\n            text = page.extract_text()\n            if text:\n                pdf_text_dict[i + 1] = text.strip()\n    except FileNotFoundError:\n        print(f"Error: File not found at file_path")\n    except Exception as e:\n        print(f"Error reading PDF: ")\n    return pdf_text_dict\n```\n\nExplain briefly how this code can be extended to detect and extract structured tables and metadata fields using positional or regex parsing strategies.\n\nYour response must be **precise**, **technical**, and **structured**, ending with the Python code block.'}], 'model': 'llama-3.3-70b-versatile', 'n': 1, 'reasoning_effort': None, 'reasoning_format': None, 'service_tier': 'on_demand', 'stop': None, 'stream': False, 'temperature': 1e-08}}
+2025-10-12 15:28:36,462 | DEBUG | Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-10-12 15:28:36,462 | DEBUG | connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=None socket_options=None
+2025-10-12 15:28:36,612 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7d73700b8980>
+2025-10-12 15:28:36,613 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x7d7370295f30> server_hostname='api.groq.com' timeout=None
+2025-10-12 15:28:36,626 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7d7370071590>
+2025-10-12 15:28:36,626 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2025-10-12 15:28:36,626 | DEBUG | send_request_headers.complete
+2025-10-12 15:28:36,627 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2025-10-12 15:28:36,627 | DEBUG | send_request_body.complete
+2025-10-12 15:28:36,627 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2025-10-12 15:28:38,661 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 12 Oct 2025 09:58:38 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'gzip'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'10864'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'5.68s'), (b'x-request-id', b'req_01k7bxq5sve5srrnz8zre23px5'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=TCtPh8URhRbU8bMx_MiXb1w7SQvcOTVeK4NSd.KopXg-1760263118-1.0.1.1-YdJiNK2ynoIjbzqcNjNTjDdNd9qBpnAtkByzBVeg9NAdKYkvMcOrBqo2FctmyyZnJwLP5h5xb53otKvmcveG3CmMGEeVkI8a62Y3djYCfgs; path=/; expires=Sun, 12-Oct-25 10:28:38 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'98d5bd5e7f17d817-BLR'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-10-12 15:28:38,662 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-12 15:28:38,662 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2025-10-12 15:28:38,663 | DEBUG | receive_response_body.complete
+2025-10-12 15:28:38,663 | DEBUG | response_closed.started
+2025-10-12 15:28:38,663 | DEBUG | response_closed.complete
+2025-10-12 15:28:38,663 | DEBUG | HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Sun, 12 Oct 2025 09:58:38 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'content-encoding': 'gzip', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'bom', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '10864', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '5.68s', 'x-request-id': 'req_01k7bxq5sve5srrnz8zre23px5', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=TCtPh8URhRbU8bMx_MiXb1w7SQvcOTVeK4NSd.KopXg-1760263118-1.0.1.1-YdJiNK2ynoIjbzqcNjNTjDdNd9qBpnAtkByzBVeg9NAdKYkvMcOrBqo2FctmyyZnJwLP5h5xb53otKvmcveG3CmMGEeVkI8a62Y3djYCfgs; path=/; expires=Sun, 12-Oct-25 10:28:38 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'cf-ray': '98d5bd5e7f17d817-BLR', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-10-12 15:28:38,670 | INFO | ✅ PDF structural analysis complete
+2025-10-12 15:28:38,671 | INFO | Generating parsing code...
+2025-10-12 15:34:34,984 | INFO | Code generation complete
+2025-10-12 15:34:34,989 | INFO | ======================================================================
+2025-10-12 15:34:34,989 | INFO | Starting PDF Debug Agent
+2025-10-12 15:34:34,989 | INFO | ======================================================================
+2025-10-12 15:34:34,990 | INFO | 
+Execution Attempt 1/5
+2025-10-12 15:34:34,992 | INFO | Script written to pdf_parser_generated.py
+2025-10-12 15:34:35,245 | INFO | ✅ SUCCESS on attempt 1
+2025-10-12 15:34:35,246 | INFO | Output:
+Processing PDF: data/icici/icici sample.pdf
+Extracting transactions...
+No transactions parsed. Please check the PDF format and parsing logic.
+
+2025-10-12 15:34:35,246 | INFO | ✅ SUCCESS: PDF parsing script executed without errors
+2025-10-12 15:34:35,246 | INFO | Pipeline completed successfully
+2025-10-12 15:34:35,339 | DEBUG | close.started
+2025-10-12 15:34:35,340 | DEBUG | close.complete
+2025-10-12 15:47:06,481 | INFO | ======================================================================
+2025-10-12 15:47:06,481 | INFO | Starting Multi-Agent Pipeline
+2025-10-12 15:47:06,481 | INFO | ======================================================================
+2025-10-12 15:47:06,531 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 15:47:06,551 | INFO | Starting PDF structure analysis
+2025-10-12 15:48:38,407 | INFO | ✅ PDF structural analysis complete
+2025-10-12 15:48:38,407 | INFO | Generating parsing code...
+2025-10-12 15:49:50,085 | INFO | Code generation complete
+2025-10-12 15:49:50,089 | INFO | ======================================================================
+2025-10-12 15:49:50,089 | INFO | Starting PDF Debug Agent
+2025-10-12 15:49:50,089 | INFO | ======================================================================
+2025-10-12 15:49:50,089 | INFO | 
+Execution Attempt 1/5
+2025-10-12 15:49:50,092 | INFO | Script written to pdf_parser_generated.py
+2025-10-12 15:49:50,272 | ERROR | Exit code 2
+2025-10-12 15:49:50,273 | ERROR | Error:
+usage: pdf_parser_generated.py [-h] pdf_path
+pdf_parser_generated.py: error: the following arguments are required: pdf_path
+
+2025-10-12 15:49:50,273 | INFO | Invoking debug agent (attempt 1)...
+2025-10-12 15:50:33,549 | INFO | Debug agent response received
+2025-10-12 15:50:33,550 | INFO | 
+Execution Attempt 2/5
+2025-10-12 15:50:33,552 | INFO | Script written to pdf_parser_generated.py
+2025-10-12 15:50:33,748 | ERROR | Exit code 1
+2025-10-12 15:50:33,748 | ERROR | Error:
+Error: No PDF path provided.
+Please run the script with the '--pdf_path' argument followed by the path to your PDF file.
+Example: python your_script.py --pdf_path data/icici/icici_sample.pdf
+
+2025-10-12 15:50:33,749 | INFO | Invoking debug agent (attempt 2)...
+2025-10-12 15:51:51,740 | INFO | ======================================================================
+2025-10-12 15:51:51,740 | INFO | Starting Multi-Agent Pipeline
+2025-10-12 15:51:51,740 | INFO | ======================================================================
+2025-10-12 15:51:51,791 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 15:51:51,807 | INFO | Starting PDF structure analysis
+2025-10-12 15:54:19,834 | INFO | ✅ PDF structural analysis complete
+2025-10-12 15:54:19,834 | INFO | Generating parsing code...
+2025-10-12 15:56:06,175 | INFO | Code generation complete
+2025-10-12 15:56:06,178 | INFO | ======================================================================
+2025-10-12 15:56:06,178 | INFO | Starting PDF Debug Agent
+2025-10-12 15:56:06,179 | INFO | ======================================================================
+2025-10-12 15:56:06,179 | INFO | 
+Execution Attempt 1/5
+2025-10-12 15:56:06,182 | INFO | Script written to pdf_parser_generated.py
+2025-10-12 15:56:06,936 | INFO | ✅ SUCCESS on attempt 1
+2025-10-12 15:56:06,936 | INFO | Output:
+Warning: Could not parse transaction line: 27-01-2025 Fuel Purchase Debit Card 1533.65 4047.68ChatGPT Powered Karbon Bannk
+Warning: Could not parse transaction line: 27-07-2025 ATM Cash Withdrawal India 2156.01 5586.77ChatGPT Powered Karbon Bannk
+Successfully extracted 98 transactions to 'output_transactions.csv'
+
+2025-10-12 15:56:06,937 | INFO | ✅ SUCCESS: PDF parsing script executed without errors
+2025-10-12 15:56:06,937 | INFO | Pipeline completed successfully
+2025-10-12 17:44:36,569 | INFO | ======================================================================
+2025-10-12 17:44:36,569 | INFO | Starting Multi-Agent Pipeline
+2025-10-12 17:44:36,570 | INFO | ======================================================================
+2025-10-12 17:44:36,620 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 17:44:36,633 | INFO | Starting PDF structure analysis
+2025-10-12 17:46:07,679 | INFO | ✅ PDF structural analysis complete
+2025-10-12 17:46:07,679 | INFO | Generating parsing code...
+2025-10-12 17:47:58,674 | INFO | Code generation complete
+2025-10-12 17:47:58,678 | INFO | ======================================================================
+2025-10-12 17:47:58,678 | INFO | Starting PDF Debug Agent
+2025-10-12 17:47:58,679 | INFO | ======================================================================
+2025-10-12 17:47:58,679 | INFO | 
+Execution Attempt 1/5
+2025-10-12 17:47:58,681 | INFO | Script written to /mnt/a/Projects/KarbonAI_CodingAgent/ai-agent-challenge/custom_parsers/icici_parser.py
+2025-10-12 17:47:58,341 | INFO | ✅ SUCCESS on attempt 1
+2025-10-12 17:47:58,341 | INFO | Output:
+Warning: Amounts pattern did not match for rest of line: Fuel Purchase Debit Card 1533.65 4047.68ChatGPT Powered Karbon Bannk (from 27-01-2025 Fuel Purchase Debit Card 1533.65 4047.68ChatGPT Powered Karbon Bannk)
+Warning: Amounts pattern did not match for rest of line: Salary Credit XYZ Pvt Ltd 4044.7 -566.45 (from 01-06-2025 Salary Credit XYZ Pvt Ltd 4044.7 -566.45)
+Warning: Amounts pattern did not match for rest of line: Salary Credit XYZ Pvt Ltd 2617.5 -3183.95 (from 01-06-2025 Salary Credit XYZ Pvt Ltd 2617.5 -3183.95)
+Warning: Amounts pattern did not match for rest of line: Dining Out Card Swipe 3077.91 -106.04 (from 07-06-2025 Dining Out Card Swipe 3077.91 -106.04)
+Warning: Amounts pattern did not match for rest of line: Utility Bill Payment Electricity 4567.77 -724.03 (from 10-06-2025 Utility Bill Payment Electricity 4567.77 -724.03)
+Warning: Amounts pattern did not match for rest of line: Utility Bill Payment Electricity 1980.53 -2704.56 (from 18-06-2025 Utility Bill Payment Electricity 1980.53 -2704.56)
+Warning: Amounts pattern did not match for rest of line: ATM Cash Withdrawal India 4944.55 -1185.15 (from 27-06-2025 ATM Cash Withdrawal India 4944.55 -1185.15)
+Warning: Amounts pattern did not match for rest of line: Interest Credit Saving Account 150.91 -1336.06 (from 30-06-2025 Interest Credit Saving Account 150.91 -1336.06)
+Warning: Amounts pattern did not match for rest of line: Online Card Purchase Flipkart 4029.62 -1730.53 (from 08-07-2025 Online Card Purchase Flipkart 4029.62 -1730.53)
+Warning: Amounts pattern did not match for rest of line: Mobile Recharge Via UPI 380.91 -2111.44 (from 14-07-2025 Mobile Recharge Via UPI 380.91 -2111.44)
+Warning: Amounts pattern did not match for rest of line: ATM Cash Withdrawal India 2156.01 5586.77ChatGPT Powered Karbon Bannk (from 27-07-2025 ATM Cash Withdrawal India 2156.01 5586.77ChatGPT Powered Karbon Bannk)
+Successfully extracted 89 transactions to output_transactions.csv
+
+2025-10-12 17:47:58,342 | INFO | ✅ SUCCESS: PDF parsing script executed without errors
+2025-10-12 18:00:59,779 | INFO | ======================================================================
+2025-10-12 18:00:59,779 | INFO | Starting Multi-Agent Pipeline
+2025-10-12 18:00:59,779 | INFO | ======================================================================
+2025-10-12 18:00:59,836 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 18:00:59,858 | INFO | Starting PDF structure analysis
+2025-10-12 18:02:26,252 | INFO | ✅ PDF structural analysis complete
+2025-10-12 18:02:26,252 | INFO | Generating parsing code...
+2025-10-12 18:05:16,531 | INFO | Code generation complete
+2025-10-12 18:05:16,536 | INFO | ======================================================================
+2025-10-12 18:05:16,536 | INFO | Starting PDF Debug Agent
+2025-10-12 18:05:16,537 | INFO | ======================================================================
+2025-10-12 18:05:16,537 | INFO | 
+Execution Attempt 1/5
+2025-10-12 18:05:16,540 | INFO | Script written to /mnt/a/Projects/KarbonAI_CodingAgent/ai-agent-challenge/custom_parsers/icici_parser.py
+2025-10-12 18:05:17,435 | INFO | ✅ SUCCESS on attempt 1
+2025-10-12 18:05:17,435 | INFO | Output:
+Extracting text from 2 pages of 'data/icici/icici sample.pdf'...
+Text extraction complete.
+
+Successfully extracted 98 transactions to 'output_transactions.csv'
+
+2025-10-12 18:05:17,436 | INFO | ✅ SUCCESS: PDF parsing script executed without errors
+2025-10-12 18:05:17,436 | INFO | Pipeline completed successfully
+2025-10-12 18:25:11,468 | INFO | ======================================================================
+2025-10-12 18:25:11,469 | INFO | Starting LangGraph Multi-Agent System
+2025-10-12 18:25:11,469 | INFO | ======================================================================
+2025-10-12 18:25:11,496 | INFO | NODE 1: Starting PDF parsing
+2025-10-12 18:25:11,555 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 18:25:11,558 | INFO | NODE 2: Starting structure analysis
+2025-10-12 18:25:22,644 | INFO | ✅ PDF structural analysis complete
+2025-10-12 18:25:22,646 | INFO | NODE 3: Starting code generation
+2025-10-12 18:25:29,419 | INFO | ✅ Code generation complete
+2025-10-12 18:25:29,420 | INFO | NODE 4: Starting execution and debugging
+2025-10-12 18:25:29,421 | INFO | Execution attempt 1/3
+2025-10-12 18:25:30,282 | INFO | ✅ Execution successful on attempt 1
+2025-10-12 18:25:30,284 | INFO | NODE 5: Starting validation
+2025-10-12 18:25:30,287 | ERROR | Validation error: No columns to parse from file
+2025-10-12 18:33:16,154 | INFO | ======================================================================
+2025-10-12 18:33:16,154 | INFO | Starting LangGraph Multi-Agent System
+2025-10-12 18:33:16,155 | INFO | ======================================================================
+2025-10-12 18:33:16,180 | INFO | NODE 1: Starting PDF parsing
+2025-10-12 18:33:16,236 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 18:33:16,237 | INFO | NODE 2: Starting structure analysis
+2025-10-12 18:33:34,802 | INFO | ✅ PDF structural analysis complete
+2025-10-12 18:33:34,803 | INFO | NODE 3: Starting code generation
+2025-10-12 18:33:41,638 | INFO | ✅ Code generation complete
+2025-10-12 18:33:41,639 | INFO | NODE 4: Starting execution and debugging
+2025-10-12 18:33:41,639 | INFO | Execution attempt 1/3
+2025-10-12 18:33:42,203 | INFO | ✅ Execution successful on attempt 1
+2025-10-12 18:33:42,205 | INFO | NODE 5: Starting validation
+2025-10-12 18:33:42,208 | ERROR | Validation error: No columns to parse from file
+2025-10-12 18:34:57,079 | INFO | ======================================================================
+2025-10-12 18:34:57,080 | INFO | Starting LangGraph Multi-Agent System
+2025-10-12 18:34:57,080 | INFO | ======================================================================
+2025-10-12 18:34:57,102 | INFO | NODE 1: Starting PDF parsing
+2025-10-12 18:34:57,157 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 18:34:57,159 | INFO | NODE 2: Starting structure analysis
+2025-10-12 18:35:09,243 | INFO | ✅ PDF structural analysis complete
+2025-10-12 18:35:09,244 | INFO | NODE 3: Starting code generation
+2025-10-12 18:35:16,189 | INFO | ✅ Code generation complete
+2025-10-12 18:35:16,190 | INFO | NODE 4: Starting execution and debugging
+2025-10-12 18:35:16,190 | INFO | Execution attempt 1/3
+2025-10-12 18:35:16,724 | INFO | ✅ Execution successful on attempt 1
+2025-10-12 18:35:16,725 | INFO | NODE 5: Starting validation
+2025-10-12 18:35:16,729 | ERROR | Validation error: No columns to parse from file
+2025-10-12 18:40:55,583 | INFO | ======================================================================
+2025-10-12 18:40:55,584 | INFO | Starting LangGraph Multi-Agent System
+2025-10-12 18:40:55,584 | INFO | ======================================================================
+2025-10-12 18:40:55,609 | INFO | NODE 1: Starting PDF parsing
+2025-10-12 18:40:55,661 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 18:40:55,663 | INFO | NODE 2: Starting structure analysis
+2025-10-12 18:41:05,387 | INFO | ✅ PDF structural analysis complete
+2025-10-12 18:41:05,389 | INFO | NODE 3: Starting code generation
+2025-10-12 18:45:12,767 | INFO | ✅ Code generation complete
+2025-10-12 18:45:12,768 | INFO | NODE 4: Starting execution and debugging
+2025-10-12 18:45:12,769 | INFO | Execution attempt 1/3
+2025-10-12 18:45:13,094 | INFO | ✅ Execution successful on attempt 1
+2025-10-12 18:45:13,095 | INFO | NODE 5: Starting validation
+2025-10-12 18:45:13,096 | ERROR | Output CSV not found
+2025-10-12 18:48:13,636 | INFO | ======================================================================
+2025-10-12 18:48:13,637 | INFO | Starting LangGraph Multi-Agent System
+2025-10-12 18:48:13,637 | INFO | ======================================================================
+2025-10-12 18:48:13,661 | INFO | NODE 1: Starting PDF parsing
+2025-10-12 18:48:13,714 | INFO | ✅ Successfully parsed 2 pages from PDF
+2025-10-12 18:48:13,716 | INFO | NODE 2: Starting structure analysis
+2025-10-12 18:48:24,383 | INFO | ✅ PDF structural analysis complete
+2025-10-12 18:48:24,384 | INFO | NODE 3: Starting code generation
+2025-10-12 18:51:11,654 | INFO | ✅ Code generation complete
+2025-10-12 18:51:11,655 | INFO | NODE 4: Starting execution and debugging
+2025-10-12 18:51:11,656 | INFO | Execution attempt 1/3
+2025-10-12 18:51:11,660 | INFO | Script written to custom_parsers/icici_parser.py
+2025-10-12 18:51:12,691 | INFO | ✅ SUCCESS on attempt 1
+2025-10-12 18:51:12,692 | INFO | Output:
+Successfully parsed 87 transactions.
+Saved to output_transactions.csv
+
+2025-10-12 18:51:12,693 | INFO | NODE 5: Starting validation
+2025-10-12 18:51:12,699 | INFO | Parsed 87 rows
+2025-10-12 18:51:12,709 | INFO | Validation score: 9.40%
